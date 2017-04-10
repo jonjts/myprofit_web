@@ -5,7 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# The font-awesome font bundled as an asset for the rails asset pipeline
+gem "font-awesome-rails"
+# OmniAuth is a flexible authentication system utilizing Rack middleware
+gem 'omniauth'
+#Facebook OAuth2 Strategy for OmniAuth 
+gem 'omniauth-facebook'
+# Oauth2 strategy for Google
+gem "omniauth-google-oauth2"
+# Flexible authentication solution for Rails with Warden.
+gem 'devise'
 # Twitter Bootstrap for Rails 5 - 4.x Asset Pipeline
 gem "twitter-bootstrap-rails"
 # jQuery UI dependency.
