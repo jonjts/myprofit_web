@@ -1,5 +1,5 @@
 <div id="device-use">
-  <h2 class="page-header">Log in</h2>
+  <h2 class="page-header"><%= t('links.login')%></h2>
   <%= link_to(fa_icon("facebook", text: t("links.login_facebook")), user_facebook_omniauth_authorize_path , :class => "btn btn-lg btn-info btn-block btn-facebook") %>
   <%= link_to(fa_icon("google", text: t("links.login_google")), user_google_oauth2_omniauth_authorize_path , :class => "btn btn-lg btn-danger btn-block btn-google") %>
 </div>

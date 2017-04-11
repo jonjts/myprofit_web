@@ -2274,8 +2274,8 @@ fieldset[disabled] a.btn {
 }
 .btn-default {
   color: #ffffff;
-  background-color: #95a5a6;
-  border-color: #95a5a6;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
 }
 .btn-default:focus,
 .btn-default.focus {
@@ -2322,11 +2322,11 @@ fieldset[disabled] .btn-default:focus,
 .btn-default.disabled.focus,
 .btn-default[disabled].focus,
 fieldset[disabled] .btn-default.focus {
-  background-color: #95a5a6;
-  border-color: #95a5a6;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
 }
 .btn-default .badge {
-  color: #95a5a6;
+  color: #18bc9c;
   background-color: #ffffff;
 }
 .btn-primary {
@@ -3938,7 +3938,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   color: #cccccc;
 }
 .breadcrumb > .active {
-  color: #95a5a6;
+  color: #18bc9c;
 }
 .pagination {
   display: inline-block;
@@ -4100,7 +4100,7 @@ a.label:focus {
   top: -1px;
 }
 .label-default {
-  background-color: #95a5a6;
+  background-color: #18bc9c;
 }
 .label-default[href]:hover,
 .label-default[href]:focus {

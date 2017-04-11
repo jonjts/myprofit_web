@@ -5,11 +5,11 @@
       <%= link_to "MyProfit", new_session_path(resource_name), :class => "navbar-brand" %>
     </div>
     <%= menu_group :pull => :right do %>
-    <%= drop_down fa_icon("globe") do %>
-      <%= menu_item fa_icon("flag", text: t("infos.portuges")), set_pt_language_index_path, method: :post %>
-      <%= menu_item fa_icon("flag", text: t("infos.ingles")), set_en_language_index_path, method: :post %>
+      <%= drop_down fa_icon("globe") do %>
+        <%= menu_item fa_icon("flag", text: t("infos.portuges")), set_pt_language_index_path, method: :post %>
+        <%= menu_item fa_icon("flag", text: t("infos.ingles")), set_en_language_index_path, method: :post %>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
   <!-- /.container-fluid -->
 </nav>

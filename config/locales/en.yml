@@ -23,8 +23,9 @@ en:
   hello: "Hello world"
   links:
     desenvolvido_por: "Developed by "
-    login_facebook: "Login with Facebook account"
-    login_google: "Login with Google account"
+    login: "Login"
+    login_facebook: "Sign in with Facebook"
+    login_google: "Sign in with Google"
   messages:
     sair: "Logout?"
   infos:

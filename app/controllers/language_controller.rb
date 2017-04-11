@@ -3,7 +3,7 @@ class LanguageController < ActionController::Base
 
   def set_pt
     session[:language] = "pt-BR"
-   redirect
+    redirect
   end
 
   def set_en
@@ -12,12 +12,12 @@ class LanguageController < ActionController::Base
   end
 end
 
-private 
+private
 
 def redirect
-	 if current_user.present?
-    	redirect_to root_path
-    else	
-    	redirect_to new_session_path :user
-    end
-	end
+  if current_user.present?
+    redirect_to root_path
+  else
+    redirect_to new_session_path :user
+  end
+end
