@@ -1,8 +1,0 @@
-<p>
-  Hello <%= current_user.name %>
-  <% if current_user.image.present? %>
-    <%= image_tag(current_user.image, size: "60") %>
-  <% end %>
-  </p>
-</br>
-<%= link_to "Sair", destroy_user_session_path, method: :delete %>

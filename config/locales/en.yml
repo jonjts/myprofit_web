@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  links:
+    desenvolvido_por: "Developed by "
+  messages:
+    sair: "Logout?"
+  infos:
+    portuges: "Portuguese"
+    ingles: "English"

@@ -1,0 +1,41 @@
+body {
+  background-color: #DEDEDF
+}
+
+.btn-facebook{
+  background-color: #3B5998;
+}
+
+.img-perfil{
+  border-radius:  48px;
+}
+
+#device-use {
+text-align: center;
+width: 40%;
+margin: 0 auto;
+
+}
+
+.new_user .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.new_input_email{
+     margin-bottom: 0px;
+       border-bottom-right-radius: 0;
+       border-bottom-left-radius:  0;
+}
+
+
+.new_input_password{
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+     border-top-left-radius:  0;
+}
