@@ -1,6 +1,8 @@
 pt-BR:
   links:
     desenvolvido_por: "Desenvolvido por "
+    login_facebook: "Entrar com conta Facebook"
+    login_google: "Entrar com conta Google"
   messages:
     sair: "Sair?"
   infos:
