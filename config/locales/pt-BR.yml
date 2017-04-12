@@ -14,6 +14,10 @@ pt-BR:
     login_google: Entrar com conta Google
   messages:
     sair: Sair?
+    can_not_see_it: Você não tem permissão para acessar esse item.
+    bill_saved: Receita adicionada com sucesso.
+    bill_updated: Receita alterada com sucesso.
+    bill_removed: Receita removida com sucesso.
   infos:
     portuges: Portugês
     ingles: Inglês
@@ -26,7 +30,7 @@ pt-BR:
         title: Título
         input: Entrada
         output: Saída
-        date_input: Data da entrada
+        date_input: Data do registro
         user_id: Usuário
         created_at: Criada em
         updated_at: Autualizada em

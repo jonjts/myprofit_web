@@ -36,6 +36,10 @@ en:
     login_google: "Sign in with Google"
   messages:
     sair: "Logout?"
+    can_not_see_it: You can not access this item.
+    bill_saved: Bill saved with success.
+    bill_updated: Bill updated with success.
+    bill_removed: Bill removed with success.
   infos:
     portuges: "Portuguese"
     ingles: "English"
@@ -48,7 +52,7 @@ en:
         title: Title
         input: Input
         output: Output
-        date_input: Input date
+        date_input: Record date
         user_id: User
         created_at: Created at
         updated_at: Updated at

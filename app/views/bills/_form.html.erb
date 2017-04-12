@@ -7,6 +7,13 @@
         </li>
       </ul>
     </div>
+    <div class="col-md-6">
+      <ul class="list-unstyled">
+        <li>
+          <%= f.input :date_input, as: :datetime, input_html: {class: 'form-control'} %>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -22,15 +29,6 @@
       <ul class="list-unstyled">
         <li>
           <%= f.input :output, as: :currency, input_html: {class: 'form-control'} %>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <ul class="list-unstyled">
-        <li>
-          <%= f.input :date_input, as: :date, input_html: {class: 'form-control'} %>
         </li>
       </ul>
     </div>

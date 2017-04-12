@@ -1,6 +1,6 @@
 class Bill < ApplicationRecord
 
-  belongs_to :users
+  belongs_to :user
 
   validates_presence_of :title
   validates_presence_of :input

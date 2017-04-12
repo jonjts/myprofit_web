@@ -1,2 +1,6 @@
-<h1>Bills#edit</h1>
-<p>Find me in app/views/bills/edit.html.erb</p>
+<div class="page-header">
+  <h2><%= t("links.edit_bill")%>
+    <small> <%= @bill.title%> </small>
+  </h2>
+</div>
+<%=  render 'form'%>

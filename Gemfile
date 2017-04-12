@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem "nested_form"
+#Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup
 gem 'simple_form'
 #gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
