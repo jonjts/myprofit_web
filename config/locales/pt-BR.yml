@@ -1,15 +1,33 @@
 pt-BR:
   links:
-    login: "Login"
+    login: Login
+    bills: Receitas
+    new_bill: Nova receita
+    save: Salvar
+    back: Voltar
     desenvolvido_por: "Desenvolvido por "
-    login_facebook: "Entrar com conta Facebook"
-    login_google: "Entrar com conta Google"
+    login_facebook: Entrar com conta Facebook
+    login_google: Entrar com conta Google
   messages:
-    sair: "Sair?"
+    sair: Sair?
   infos:
-    portuges: "Portugês"
-    ingles: "Inglês"
+    portuges: Portugês
+    ingles: Inglês
   activerecord:
+    models:
+      bill: Receita
+      user: Usuário
+    attributes:
+      bill: 
+        title: Título
+        input: Entrada
+        output: Saída
+        date_input: Data da entrada
+        user_id: Usuário
+        created_at: Criada em
+        updated_at: Autualizada em
+      user:
+        name: Nome
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

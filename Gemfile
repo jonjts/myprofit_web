@@ -5,11 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "nested_form"
+gem 'simple_form'
+#gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 # The font-awesome font bundled as an asset for the rails asset pipeline
 gem "font-awesome-rails"
 # OmniAuth is a flexible authentication system utilizing Rack middleware
 gem 'omniauth'
-#Facebook OAuth2 Strategy for OmniAuth 
+#Facebook OAuth2 Strategy for OmniAuth
 gem 'omniauth-facebook'
 # Oauth2 strategy for Google
 gem "omniauth-google-oauth2"

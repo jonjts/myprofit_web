@@ -622,7 +622,7 @@ a.bg-danger:focus {
 .page-header {
   padding-bottom: 9.5px;
   margin: 42px 0 21px;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #eee;
 }
 ul,
 ol {
@@ -1498,7 +1498,7 @@ th {
 .table > caption + thead > tr:first-child > td,
 .table > colgroup + thead > tr:first-child > td,
 .table > thead:first-child > tr:first-child > td {
-  border-top: 0;
+  border-top: ;
 }
 .table > tbody + tbody {
   border-top: 2px solid #ecf0f1;

@@ -1,0 +1,8 @@
+<div class="page-header">
+  <h2><%= t("links.bills")%></h2>
+</div>
+<!-- Split button -->
+<%= link_to(fa_icon("plus", text: t("links.new_bill")), new_bill_path , class: "btn btn-primary") %>
+<div id="div_bills_table">
+  <%= render 'bills_table', bills: @bills %>
+</div>
