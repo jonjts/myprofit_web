@@ -24,6 +24,10 @@ en:
   links:
     bills: Bills
     new_bill: New bill
+    edit_bill: Edit bill
+    remove_bill: Remove bill
+    show_bill: Show bill
+    confirm_remove_bill: Do you want to remove this bill?
     save: Save
     back: Back
     desenvolvido_por: "Developed by "

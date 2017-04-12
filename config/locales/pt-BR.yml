@@ -3,6 +3,10 @@ pt-BR:
     login: Login
     bills: Receitas
     new_bill: Nova receita
+    edit_bill: Alterar receita
+    remove_bill: Remover receita
+    show_bill: Ver receita
+    confirm_remove_bill: Remover essa receita?
     save: Salvar
     back: Voltar
     desenvolvido_por: "Desenvolvido por "

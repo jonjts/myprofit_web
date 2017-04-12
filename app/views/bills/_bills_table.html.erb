@@ -12,8 +12,8 @@
       <tr>
         <td>
           <div class="btn-group">
-            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: "Alterar paciente" %>
-            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-trash"), bill_path(paciente), method: :delete, "data-confirm": "Deseja remover este paciente?", class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: "Remover paciente" %>
+            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.edit_bill') %>
+            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-trash"), bill_path(bill), method: :delete, "data-confirm": t('links.confirm_remove_bill'), class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.remove_bill') %>
           </div>
         </td>
         <td>
