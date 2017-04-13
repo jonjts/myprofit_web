@@ -12,13 +12,32 @@ body {
   font-style: italic;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 1em 0;
-    padding: 0;
+.calculate hr{
+  margin-top: 4px;
+  margin-bottom:  4px;
+}
+
+.calculate .resto{
+  text-align: right;
+  font-size: 22px;
+}
+
+.calculate .minuendo{
+  text-align: right;
+  font-size: 22px;
+}
+
+.calculate .subtraendo{
+  text-align: right;
+  font-size: 22px;
+  color: red;
+}
+
+.calculate .operador{
+  font-size: 22px;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -50px;
 }
 
 .btn-facebook{

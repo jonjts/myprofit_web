@@ -46,6 +46,8 @@ en:
   infos:
     portuges: "Portuguese"
     ingles: "English"
+    balance: Balance
+    total: Total
   filters:
     by_date_input: Record between
     by_input: Input between

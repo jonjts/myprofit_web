@@ -5,34 +5,76 @@
       <th><%= t("activerecord.attributes.bill.title")%></th>
       <th><%= t("activerecord.attributes.bill.input")%></th>
       <th><%= t("activerecord.attributes.bill.output")%></th>
+      <th><%= t("infos.balance")%></th>
       <th><%= t("activerecord.attributes.bill.date_input")%></th>
     </thead>
+    <%
+    total_input = 0
+    total_output = 0
+    total_total = 0
+    %>
     <tbody>
       <% bills.each do |bill| %>
         <tr>
           <td>
             <div class="btn-group">
-              <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.edit_bill') %>
-              <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-trash"), bill_path(bill), method: :delete, "data-confirm": t('links.confirm_remove_bill'), class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.remove_bill') %>
+              <% link_to fa_icon("search"), bill_path(bill), class: "btn btn-default btn-xs",title: t('links.show_bill') %>
+              <%= link_to fa_icon("pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.edit_bill') %>
+              <%= link_to fa_icon("trash"), bill_path(bill), method: :delete, "data-confirm": t('links.confirm_remove_bill'), class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.remove_bill') %>
             </div>
           </td>
           <td>
             <%= bill.title %>
           </td>
           <td>
+            <% total_input += bill.input %>
             <%= number_to_currency(bill.input) %>
           </td>
           <td>
+            <% total_output += bill.output %>
             <%= number_to_currency(bill.output) %>
           </td>
-          <td>
-            <%= format_date bill.date_input %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="pagination-center">
-    <%= will_paginate bills, renderer: BootstrapPagination::Rails%>
-  </div>
-</div>
+          <% total = bill.input - bill.output %>
+          <%if total < bill.input%>
+            <td style="color: red;">
+            <%else%>
+              <td>
+              <%end%>
+              <%= number_to_currency(total) %>
+            </td>
+            <td>
+              <%= format_date bill.date_input %>
+            </td>
+          </tr>
+        <% end %>
+        <% unless bills.blank?%>
+          <tr>
+            <td>
+              <%= label_tag(:q, t("infos.total")) %>
+            </td>
+            <td>
+            </td>
+            <td>
+              <%= label_tag(:q, number_to_currency(total_input)) %>
+            </td>
+            <td>
+              <%= label_tag(:q, number_to_currency(total_output)) %>
+            </td>
+            <% total = total_input - total_output %>
+            <%if total < total_input%>
+              <td style="color: red;">
+              <%else%>
+                <td>
+                <%end%>
+                <%= label_tag(:q, number_to_currency(total)) %>
+              </td>
+              <td>
+              </td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+      <div class="pagination-center">
+        <%= will_paginate bills, renderer: BootstrapPagination::Rails%>
+      </div>
+    </div>

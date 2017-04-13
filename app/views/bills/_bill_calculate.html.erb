@@ -1,0 +1,16 @@
+<div id="bill_calculate">
+  <div class="row calculate">
+    <div class="col-md-12 minuendo"><%= bill.input %></div>
+    <div class="col-md-12 subtraendo">
+      <label class="operador">-</label>
+      <%= bill.output %>
+    </div>
+    <div class="col-md-12"><hr class="line"></div>
+    <div class="col-md-12 resto"><%= bill.input - bill.output %></div>
+  </div>
+</div>
+<script type="text/javascript">
+  <%if bill.input - bill.output <= 0%>
+        $(".resto").css("color","red");
+        	<%end%>
+</script>

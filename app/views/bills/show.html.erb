@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h2><%= @bill.title %>
+    <small class="pull-right"><%= format_date @bill.date_input%>  </small>
+  </h2>
+</div>
+<div class="row">
+  <div class="col-xs-2">
+    <%= render 'bill_calculate', bill: @bill%>
+  </div>
+</div>

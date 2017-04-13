@@ -3,8 +3,11 @@ class BillsController < ApplicationController
   before_action :set_bill, :only => [:update, :destroy, :edit, :show]
 
   def index
-    @bills = current_user.bills.paginate(:page => params[:page], :per_page => 3).order(date_input: :desc)
+    @bills = current_user.bills.paginate(:page => params[:page], :per_page => 10).order(date_input: :desc)
     @bill = Bill.new
+  end
+
+  def show
   end
 
   def search
@@ -23,7 +26,6 @@ class BillsController < ApplicationController
 
   def create
     @bill = Bill.new(params_bill)
-    puts @bill.date_input
     @bill.user = current_user
     if @bill.save
       flash[:success] = t('messages.bill_saved')

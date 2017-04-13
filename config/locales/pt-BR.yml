@@ -24,6 +24,8 @@ pt-BR:
   infos:
     portuges: Portugês
     ingles: Inglês
+    balance: Saldo
+    total: Total
   filters:
     by_date_input: Registrada entre
     by_input: Entrada entre
