@@ -15,3 +15,7 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require maskmoney
+//= require moment
+//= require moment/pt-br
+//= require bootstrap-datetimepicker

@@ -12,6 +12,8 @@ pt-BR:
     desenvolvido_por: "Desenvolvido por "
     login_facebook: Entrar com conta Facebook
     login_google: Entrar com conta Google
+    filter: Filtrar
+    search: Pesquisar
   messages:
     sair: Sair?
     can_not_see_it: Você não tem permissão para acessar esse item.
@@ -21,6 +23,14 @@ pt-BR:
   infos:
     portuges: Portugês
     ingles: Inglês
+  filters:
+    by_date_input: Registrada entre
+    by_input: Entrada entre
+    by_output: Saída entre
+    max: Max
+    min: Min
+    search: Pesquisar
+    clear: Limpar
   activerecord:
     models:
       bill: Receita

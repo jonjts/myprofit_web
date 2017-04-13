@@ -5,9 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+# jQuery.maskMoney plugin for rails asset pipeline
+gem 'maskmoney-rails'
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup
 gem 'simple_form'
-#gem 'will_paginate', '~> 3.1.0'
+# gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 # The font-awesome font bundled as an asset for the rails asset pipeline
 gem "font-awesome-rails"

@@ -34,6 +34,8 @@ en:
     login: "Login"
     login_facebook: "Sign in with Facebook"
     login_google: "Sign in with Google"
+    filter: Filter
+    search: Search
   messages:
     sair: "Logout?"
     can_not_see_it: You can not access this item.
@@ -43,6 +45,14 @@ en:
   infos:
     portuges: "Portuguese"
     ingles: "English"
+  filters:
+    by_date_input: Record between
+    by_input: Input between
+    by_output: Output between
+    max: Max
+    min: Min
+    search: Search
+    clear: Clear
   activerecord:
     models:
       bill: Bill

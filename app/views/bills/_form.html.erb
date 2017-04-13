@@ -10,7 +10,7 @@
     <div class="col-md-6">
       <ul class="list-unstyled">
         <li>
-          <%= f.input :date_input, as: :datetime, input_html: {class: 'form-control'} %>
+          <%= f.input :date_input,as: :string,input_html: {class: 'form-control', :"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker'} %>
         </li>
       </ul>
     </div>
@@ -45,3 +45,11 @@
     </div>
   </div>
 <% end %>
+<script type="text/javascript">
+  $("#bill_input").maskMoney();
+                $("#bill_output").maskMoney();
+  
+                $('#bill_date_input').datetimepicker({
+                                  locale: '<%= session[:language]%>'
+                              });
+</script>
