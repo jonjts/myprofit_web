@@ -34,7 +34,8 @@ class Bill < ApplicationRecord
     end
 
     if !date_max.blank? && !date_min.blank?
-      @all = @all.where("date_input BETWEEN ? AND ?", date_min, date_max)
+      @all = @all.where("date_input BETWEEN ? AND ?", convert_to_date(date_min),
+                        convert_to_date(date_max))
     elsif !date_max.blank?
       @all = @all.where('date_input <= ?', date_max)
     elsif !date_min.blank?
@@ -45,7 +46,12 @@ class Bill < ApplicationRecord
 
 
   private
+
   def self.currency_to_number(currency_value)
     (currency_value.is_a? String) ? currency_value.scan(/[.0-9]/).join.to_d : currency_value
+  end
+
+  def self.convert_to_date(value)
+    date = DateTime.parse(value)
   end
 end

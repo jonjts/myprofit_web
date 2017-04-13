@@ -1,2 +1,7 @@
 $("#bills_table").remove();
+$("#empty_text").remove();
 $("#div_bills_table").append("<%= escape_javascript(render partial: 'bills_table', locals: { bills: @bills } ) %>");  
+
+<%if @bills.blank?%>
+$("#div_bills_table").append("<%= escape_javascript(render partial: 'no_bill_found') %>");  
+<%end%>

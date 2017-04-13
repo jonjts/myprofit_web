@@ -42,6 +42,7 @@ en:
     bill_saved: Bill saved with success.
     bill_updated: Bill updated with success.
     bill_removed: Bill removed with success.
+    no_bill_found: No bill found
   infos:
     portuges: "Portuguese"
     ingles: "English"

@@ -2,6 +2,16 @@ body {
   background-color: #DEDEDF
 }
 
+.pagination-center{
+  width: 275px;
+  margin: 0 auto;
+}
+
+.empty_text{
+  text-align: center;
+  font-style: italic;
+}
+
 hr {
     display: block;
     height: 1px;

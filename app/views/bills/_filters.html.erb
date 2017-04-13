@@ -57,30 +57,30 @@
 </div>
 <script type="text/javascript">
   $("#output_min").maskMoney();
-                                $("#output_max").maskMoney();
+                                  $("#output_max").maskMoney();
   
-                                $("#input_min").maskMoney();
-                                $("#input_max").maskMoney();
+                                  $("#input_min").maskMoney();
+                                  $("#input_max").maskMoney();
   
-                                $('#date_min').datetimepicker({
-                                locale: '<%= session[:language]%>'
-                                });
-                                $('#date_max').datetimepicker({
-                                locale: '<%= session[:language]%>'
-                                });
+                                  $('#date_min').datetimepicker({
+                                  locale: '<%= session[:language]%>'
+                                  });
+                                  $('#date_max').datetimepicker({
+                                  locale: '<%= session[:language]%>'
+                                  });
   
-                                $("#submit_link").click(function(event) {
-                                	event.preventDefault();
-                                  $("#search_form").submit();
-                                });
-                                $("#clear_link").click(function(event) {
-                                	event.preventDefault();
-                                  $("#title").val('');
-                                  $("#date_min").val('');
-                                  $("#date_max").val('');
-                                  $("#input_max").val('');
-                                  $("#input_min").val('');
-                                  $("#output_max").val('');
-                                  $("#output_min").val('');
-                                });
+                                  $("#submit_link").click(function(event) {
+                                    event.preventDefault();
+                                    $("#search_form").submit();
+                                  });
+                                  $("#clear_link").click(function(event) {
+                                    event.preventDefault();
+                                    $("#title").val('');
+                                    $("#date_min").val('');
+                                    $("#date_max").val('');
+                                    $("#input_max").val('');
+                                    $("#input_min").val('');
+                                    $("#output_max").val('');
+                                    $("#output_min").val('');
+                                  });
 </script>

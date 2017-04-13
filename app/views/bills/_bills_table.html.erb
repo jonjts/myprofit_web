@@ -1,36 +1,38 @@
-<table class="table table-striped" id="bills_table">
-  <thead>
-    <th></th>
-    <th><%= t("activerecord.attributes.bill.title")%></th>
-    <th><%= t("activerecord.attributes.bill.input")%></th>
-    <th><%= t("activerecord.attributes.bill.output")%></th>
-    <th><%= t("activerecord.attributes.bill.date_input")%></th>
-  </thead>
-  <tbody>
-    <% bills.each do |bill| %>
-      <tr>
-        <td>
-          <div class="btn-group">
-            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.edit_bill') %>
-            <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-trash"), bill_path(bill), method: :delete, "data-confirm": t('links.confirm_remove_bill'), class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.remove_bill') %>
-          </div>
-        </td>
-        <td>
-          <%= bill.title %>
-        </td>
-        <td>
-          <%= number_to_currency(bill.input) %>
-        </td>
-        <td>
-          <%= number_to_currency(bill.output) %>
-        </td>
-        <td>
-          <%= format_date bill.date_input %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<div class="pagination-center">
-  <%= will_paginate bills, renderer: BootstrapPagination::Rails%>
+<div id="bills_table">
+  <table class="table table-striped" >
+    <thead>
+      <th></th>
+      <th><%= t("activerecord.attributes.bill.title")%></th>
+      <th><%= t("activerecord.attributes.bill.input")%></th>
+      <th><%= t("activerecord.attributes.bill.output")%></th>
+      <th><%= t("activerecord.attributes.bill.date_input")%></th>
+    </thead>
+    <tbody>
+      <% bills.each do |bill| %>
+        <tr>
+          <td>
+            <div class="btn-group">
+              <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-pencil"), edit_bill_path(bill), class: "btn btn-default btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.edit_bill') %>
+              <%= link_to content_tag(:span, nil, class: "glyphicon glyphicon-trash"), bill_path(bill), method: :delete, "data-confirm": t('links.confirm_remove_bill'), class: "btn btn-danger btn-xs", data: { toggle: "tooltip", placement: "top" },  title: t('links.remove_bill') %>
+            </div>
+          </td>
+          <td>
+            <%= bill.title %>
+          </td>
+          <td>
+            <%= number_to_currency(bill.input) %>
+          </td>
+          <td>
+            <%= number_to_currency(bill.output) %>
+          </td>
+          <td>
+            <%= format_date bill.date_input %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="pagination-center">
+    <%= will_paginate bills, renderer: BootstrapPagination::Rails%>
+  </div>
 </div>

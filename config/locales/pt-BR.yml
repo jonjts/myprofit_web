@@ -20,6 +20,7 @@ pt-BR:
     bill_saved: Receita adicionada com sucesso.
     bill_updated: Receita alterada com sucesso.
     bill_removed: Receita removida com sucesso.
+    no_bill_found: Nenhuma receita encontrada
   infos:
     portuges: Portugês
     ingles: Inglês
