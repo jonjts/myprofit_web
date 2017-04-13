@@ -1,100 +1,86 @@
 <div class="collapse" id="collapse_filter">
   <br>
-  <%= form_tag remote: true, method: :pots do %>
+  <%= form_tag search_bills_path, remote: true, method: :get, id: "search_form" do %>
     <div class="row">
       <div class="col-xs-5">
         <div class="form-group ">
           <%= label_tag(:q, t("activerecord.attributes.bill.title")) %>
-          <%= text_field_tag(:q, "" ,class: 'form-control') %>
+          <%= text_field_tag(:title, "" ,class: 'form-control') %>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="form-group ">
+          <%= label_tag(:q, t("filters.by_input")) %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= text_field_tag(:input_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+            </div>
+            <div class="col-md-6">
+              <%= text_field_tag(:input_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3">
+        <div class="form-group ">
+          <%= label_tag(:q, t("filters.by_output")) %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= text_field_tag(:output_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+            </div>
+            <div class="col-md-6">
+              <%= text_field_tag(:output_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-5">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= t('filters.by_date_input')%></h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <%= text_field_tag(:date_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
-              </div>
-              <div class="col-md-6">
-                <%= text_field_tag(:date_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
-              </div>
+        <div class="form-group ">
+          <%= label_tag(:q, t("filters.by_date_input")) %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= text_field_tag(:date_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+            </div>
+            <div class="col-md-6">
+              <%= text_field_tag(:date_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-xs-5">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title"><%= t('filters.by_input')%></h3>
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <%= text_field_tag(:input_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
-                  </div>
-                  <div class="col-md-6">
-                    <%= text_field_tag(:input_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-5">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title"><%= t('filters.by_output')%></h3>
-              </div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-6">
-                    <%= text_field_tag(:output_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
-                  </div>
-                  <div class="col-md-6">
-                    <%= text_field_tag(:output_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <%= link_to(fa_icon('search', text: t('filters.search')),"#" ,:name => 'submit', :id => 'submit_link') %>
-      </div>
-      <div class="col-md-6">
-      </div>
-    </div>
+    <%= link_to(fa_icon('search', text: t('filters.search')),"#" ,:name => 'submit', :id => 'submit_link') %>
+    <%= link_to(fa_icon('eraser', text: t('filters.clear')),"#" ,:name => 'submit', :id => 'clear_link') %>
     <%= submit_tag("Search",:class => "hidden", :id => 'form_submit_search') %>
   <% end %>
 </div>
 <script type="text/javascript">
   $("#output_min").maskMoney();
-                                                  $("#output_max").maskMoney();
+                                $("#output_max").maskMoney();
   
-                                                  $("#input_min").maskMoney();
-                                                  $("#input_max").maskMoney();
+                                $("#input_min").maskMoney();
+                                $("#input_max").maskMoney();
   
-                                                  $('#date_min').datetimepicker({
-                                                  	locale: '<%= session[:language]%>'
-                                                  });
-                                                  $('#date_max').datetimepicker({
-                                                  	locale: '<%= session[:language]%>'
-                                                  });
+                                $('#date_min').datetimepicker({
+                                locale: '<%= session[:language]%>'
+                                });
+                                $('#date_max').datetimepicker({
+                                locale: '<%= session[:language]%>'
+                                });
   
-                                                  $(document).ready(function() {
-                  $(document).on("click","#submit_link",function() {
-                      $('#form_submit_search').click();
-                  });
-              });
+                                $("#submit_link").click(function(event) {
+                                	event.preventDefault();
+                                  $("#search_form").submit();
+                                });
+                                $("#clear_link").click(function(event) {
+                                	event.preventDefault();
+                                  $("#title").val('');
+                                  $("#date_min").val('');
+                                  $("#date_max").val('');
+                                  $("#input_max").val('');
+                                  $("#input_min").val('');
+                                  $("#output_max").val('');
+                                  $("#output_min").val('');
+                                });
 </script>

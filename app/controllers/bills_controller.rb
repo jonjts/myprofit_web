@@ -7,6 +7,16 @@ class BillsController < ApplicationController
     @bill = Bill.new
   end
 
+  def search
+    @bills = Bill.search(current_user,params[:title], params[:input_min],
+                         params[:input_max], params[:output_min],
+                         params[:output_max],params[:date_min],
+                         params[:date_max]).paginate(:page => params[:page]).order(date_input: :desc)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def new
     @bill = Bill.new
   end

@@ -1,0 +1,2 @@
+$("#bills_table").remove();
+$("#div_bills_table").append("<%= escape_javascript(render partial: 'bills_table', locals: { bills: @bills } ) %>");  

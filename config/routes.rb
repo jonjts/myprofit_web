@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       passwords:      "users/passwords",
     }, :path_names => {:sign_in => "login", :sign_out => "logout"}, skip: :omniauth_callbacks
 
-    resources :bills
+    resources :bills do
+      get :search, :on => :collection, :defaults => { :format => 'js' }
+    end
     root to: 'home#index'
   end
 
