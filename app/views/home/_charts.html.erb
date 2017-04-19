@@ -1,0 +1,56 @@
+<div id="charts">
+  <div class="row">
+    <div class="col-xs-12 ">
+      <div class="col-xs-4 ">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <%= fa_icon("arrow-circle-down 3x")%>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"><%= number_to_currency sum_input %></div>
+                <div><%= t("activerecord.attributes.bill.input")%></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 ">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <%= fa_icon("arrow-circle-up 3x")%>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"><%= number_to_currency sum_output%></div>
+                <div><%= t("activerecord.attributes.bill.output")%></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 ">
+        <div class='<%= "panel panel-"+balance_color %>' >
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <%= fa_icon("minus-circle 3x")%>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"><%= number_to_currency sum_balance%></div>
+                <div><%= t("infos.balance")%></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 ">
+      <%= pie_chart(pie_values,colors: ["#18BC9C", "#E74C3C"] ) %>
+    </div>
+  </div>
+</div>

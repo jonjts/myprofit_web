@@ -19,9 +19,11 @@
 //= require moment
 //= require moment/pt-br
 //= require bootstrap-datetimepicker
-
+//= require Chart.bundle
+//= require chartkick
 
 document.addEventListener("turbolinks:load", function() {
+	Chartkick.configure({language: "pt"});
   $(".datetimepicker").datetimepicker({
 format: 'L', locale: 'pt-br'
 });

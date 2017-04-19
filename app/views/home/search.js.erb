@@ -1,0 +1,2 @@
+$("#charts").remove();
+$("#div_charts").append("<%= escape_javascript(render partial: 'charts', locals: { pie_values: @pie_values, line_value: @line_value, sum_input: @sum_input, sum_output: @sum_output,sum_balance: @sum_balance, balance_color: @balance_color } ) %>");  

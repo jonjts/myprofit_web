@@ -1,0 +1,6 @@
+<div class="collapse" style="display:none">
+  <%= form_tag search_home_path, remote: true, method: :get, id: "dashboard_form" do %>
+    <%= text_field_tag(:search_month, "" ,class: 'form-control') %>
+    <%= text_field_tag(:search_year, "" ,class: 'form-control') %>
+  <% end %>
+</div>

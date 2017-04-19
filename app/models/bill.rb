@@ -1,5 +1,21 @@
 class Bill < ApplicationRecord
 
+  scope :for_month, ->(user_id,month, year) {
+    where('user_id = ? AND extract(month  from date_record) = ? AND extract(year  from date_record) = ?',
+          user_id,month, year)
+  }
+
+  scope :with_input, ->(user_id,month, year) {
+    where('user_id = ? AND input > 0 AND extract(month  from date_record) = ? AND extract(year  from date_record) = ?',
+          user_id,month, year)
+  }
+
+  scope :with_output, ->(user_id,month, year) {
+    where('user_id = ? AND output > 0 AND extract(month  from date_record) = ? AND extract(year  from date_record) = ?',
+          user_id,month, year)
+  }
+
+
   belongs_to :user
 
   validates_presence_of :title
@@ -7,7 +23,7 @@ class Bill < ApplicationRecord
 
   def date_record
     unless attributes['date_record'].blank?
-      return	attributes['date_record'].strftime("%d/%m/%Y ")
+      return  attributes['date_record'].strftime("%d/%m/%Y")
     end
     return nil
   end

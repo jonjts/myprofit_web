@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# The simplest way to group temporal data
+gem 'groupdate'
+# Create beautiful JavaScript charts with one line of Ruby
+gem "chartkick"
 # The Moment.js JavaScript library ready to play with the Rails Asset Pipeline
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'

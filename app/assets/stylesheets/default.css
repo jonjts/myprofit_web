@@ -2,6 +2,10 @@ body {
   background-color: #DEDEDF
 }
 
+.dashinfo{
+  border-color: none;
+}
+
 .pagination-center{
   width: 275px;
   margin: 0 auto;

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :bills do
       get :search, :on => :collection, :defaults => { :format => 'js' }
     end
+    resource :home do
+      get :search, :on => :collection, :defaults => { :format => 'js' }, controller: :home
+    end
     root to: 'home#index'
   end
 
