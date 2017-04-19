@@ -49,7 +49,7 @@ en:
     balance: Balance
     total: Total
   filters:
-    by_date_input: Record between
+    by_date_record: Record between
     by_input: Input between
     by_output: Output between
     max: Max
@@ -65,7 +65,7 @@ en:
         title: Title
         input: Input
         output: Output
-        date_input: Record date
+        date_record: Record date
         user_id: User
         created_at: Created at
         updated_at: Updated at

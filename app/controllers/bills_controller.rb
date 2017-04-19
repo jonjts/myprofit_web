@@ -3,7 +3,7 @@ class BillsController < ApplicationController
   before_action :set_bill, :only => [:update, :destroy, :edit, :show]
 
   def index
-    @bills = current_user.bills.paginate(:page => params[:page], :per_page => 10).order(date_input: :desc)
+    @bills = current_user.bills.paginate(:page => params[:page], :per_page => 10).order(date_record: :desc)
     @bill = Bill.new
   end
 
@@ -14,7 +14,7 @@ class BillsController < ApplicationController
     @bills = Bill.search(current_user,params[:title], params[:input_min],
                          params[:input_max], params[:output_min],
                          params[:output_max],params[:date_min],
-                         params[:date_max]).paginate(:page => params[:page]).order(date_input: :desc)
+                         params[:date_max]).paginate(:page => params[:page]).order(date_record: :desc)
     respond_to do |format|
       format.js
     end
@@ -27,6 +27,7 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(params_bill)
     @bill.user = current_user
+    puts params[:bill][:input]
     if @bill.save
       flash[:success] = t('messages.bill_saved')
       redirect_to bills_path
@@ -66,7 +67,10 @@ class BillsController < ApplicationController
   end
 
   def params_bill
-    params.require(:bill).permit(:title, :input, :output, :date_input)
+    p = params.require(:bill).permit(:title, :input, :output, :date_record)
+    p[:input] = p[:input].gsub(',','')
+    p[:output] = p[:output].gsub(',','')
+    return p
   end
 
   def check_is_mine

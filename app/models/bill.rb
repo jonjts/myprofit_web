@@ -3,7 +3,14 @@ class Bill < ApplicationRecord
   belongs_to :user
 
   validates_presence_of :title
-  validates_presence_of :date_input
+  validates_presence_of :date_record
+
+  def date_record
+    unless attributes['date_record'].blank?
+      return	attributes['date_record'].strftime("%d/%m/%Y ")
+    end
+    return nil
+  end
 
 
   def self.search(user, title, input_min, input_max,
@@ -34,12 +41,12 @@ class Bill < ApplicationRecord
     end
 
     if !date_max.blank? && !date_min.blank?
-      @all = @all.where("date_input BETWEEN ? AND ?", convert_to_date(date_min),
+      @all = @all.where("date_record BETWEEN ? AND ?", convert_to_date(date_min),
                         convert_to_date(date_max))
     elsif !date_max.blank?
-      @all = @all.where('date_input <= ?', date_max)
+      @all = @all.where('date_record <= ?', date_max)
     elsif !date_min.blank?
-      @all = @all.where("date_input >= ?", date_min)
+      @all = @all.where("date_record >= ?", date_min)
     end
     @all
   end

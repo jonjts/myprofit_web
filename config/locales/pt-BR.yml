@@ -27,7 +27,7 @@ pt-BR:
     balance: Saldo
     total: Total
   filters:
-    by_date_input: Registrada entre
+    by_date_record: Registrada entre
     by_input: Entrada entre
     by_output: Saída entre
     max: Max
@@ -43,7 +43,7 @@ pt-BR:
         title: Título
         input: Entrada
         output: Saída
-        date_input: Data do registro
+        date_record: Data do registro
         user_id: Usuário
         created_at: Criada em
         updated_at: Autualizada em

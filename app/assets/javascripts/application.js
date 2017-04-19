@@ -19,3 +19,10 @@
 //= require moment
 //= require moment/pt-br
 //= require bootstrap-datetimepicker
+
+
+document.addEventListener("turbolinks:load", function() {
+  $(".datetimepicker").datetimepicker({
+format: 'L', locale: 'pt-br'
+});
+})

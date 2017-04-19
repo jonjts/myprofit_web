@@ -12,14 +12,7 @@ module ApplicationHelper
   end
 
   def format_date date
-    case session[:language]
-    when 'en'
-      date.strftime("%d/%m/%Y %I:%m%P")
-    when 'pt-BR'
-      date.strftime("%d/%m/%Y %H:%M")
-    else
-      date.strftime("%d/%m/%Y %H:%M")
-    end
-
+    # date.strftime("%d/%m/%Y")
+    date
   end
 end

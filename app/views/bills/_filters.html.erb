@@ -8,47 +8,65 @@
           <%= text_field_tag(:title, "" ,class: 'form-control') %>
         </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-5">
         <div class="form-group ">
-          <%= label_tag(:q, t("filters.by_input")) %>
+          <%= label_tag(:q, t("filters.by_date_record")) %>
           <div class="row">
             <div class="col-md-6">
-              <%= text_field_tag(:input_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+              <div class="input-group">
+                <%= text_field_tag(:date_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              </div>
             </div>
             <div class="col-md-6">
-              <%= text_field_tag(:input_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+              <div class="input-group">
+                <%= text_field_tag(:date_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-3">
+      <div class="col-xs-5">
+        <div class="form-group ">
+          <%= label_tag(:q, t("filters.by_input")) %>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="input-group">
+                <%= text_field_tag(:input_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-group">
+                <%= text_field_tag(:input_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-5">
         <div class="form-group ">
           <%= label_tag(:q, t("filters.by_output")) %>
           <div class="row">
             <div class="col-md-6">
-              <%= text_field_tag(:output_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+              <div class="input-group">
+                <%= text_field_tag(:output_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+              </div>
             </div>
             <div class="col-md-6">
-              <%= text_field_tag(:output_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+              <div class="input-group">
+                <%= text_field_tag(:output_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-5">
-        <div class="form-group ">
-          <%= label_tag(:q, t("filters.by_date_input")) %>
-          <div class="row">
-            <div class="col-md-6">
-              <%= text_field_tag(:date_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
-            </div>
-            <div class="col-md-6">
-              <%= text_field_tag(:date_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <%= link_to(fa_icon('search', text: t('filters.search')),"#" ,:name => 'submit', :id => 'submit_link') %>
     <%= link_to(fa_icon('eraser', text: t('filters.clear')),"#" ,:name => 'submit', :id => 'clear_link') %>
@@ -57,31 +75,31 @@
 </div>
 <script type="text/javascript">
   $("#output_min").maskMoney();
-  $("#output_max").maskMoney();
+                                $("#output_max").maskMoney();
   
-  $("#input_min").maskMoney();
-  $("#input_max").maskMoney();
+                                $("#input_min").maskMoney();
+                                $("#input_max").maskMoney();
   
-  $('#date_min').datetimepicker({
-  locale: '<%= session[:language]%>'
-  });
-  $('#date_max').datetimepicker({
-  locale: '<%= session[:language]%>'
-  });
+                                $('#date_min').datetimepicker({
+                                locale: 'pt-br', format: 'L'
+                                });
+                                $('#date_max').datetimepicker({
+                                locale: 'pt-br', format: 'L'
+                                });
   
-  $("#submit_link").click(function(event) {
-  event.preventDefault();
-  $("#search_form").submit();
-  });
-  $("#clear_link").click(function(event) {
-  event.preventDefault();
-  $("#title").val('');
-  $("#date_min").val('');
-  $("#date_max").val('');
-  $("#input_max").val('');
-  $("#input_min").val('');
-  $("#output_max").val('');
-  $("#output_min").val('');
-  $("#search_form").submit();
-  });
+                                $("#submit_link").click(function(event) {
+                                event.preventDefault();
+                                $("#search_form").submit();
+                                });
+                                $("#clear_link").click(function(event) {
+                                event.preventDefault();
+                                $("#title").val('');
+                                $("#date_min").val('');
+                                $("#date_max").val('');
+                                $("#input_max").val('');
+                                $("#input_min").val('');
+                                $("#output_max").val('');
+                                $("#output_min").val('');
+                                $("#search_form").submit();
+                                });
 </script>

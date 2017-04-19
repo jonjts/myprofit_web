@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'momentjs-rails', '>= 2.9.0'
+# The Moment.js JavaScript library ready to play with the Rails Asset Pipeline
+gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # jQuery.maskMoney plugin for rails asset pipeline
 gem 'maskmoney-rails'

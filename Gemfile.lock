@@ -217,7 +217,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   maskmoney-rails
-  momentjs-rails (>= 2.9.0)
+  momentjs-rails
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

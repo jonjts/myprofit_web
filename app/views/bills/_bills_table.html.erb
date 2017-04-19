@@ -6,7 +6,7 @@
       <th><%= t("activerecord.attributes.bill.input")%></th>
       <th><%= t("activerecord.attributes.bill.output")%></th>
       <th><%= t("infos.balance")%></th>
-      <th><%= t("activerecord.attributes.bill.date_input")%></th>
+      <th><%= t("activerecord.attributes.bill.date_record")%></th>
     </thead>
     <%
     total_input = 0
@@ -43,7 +43,7 @@
               <%= number_to_currency(total) %>
             </td>
             <td>
-              <%= format_date bill.date_input %>
+              <%= format_date bill.date_record %>
             </td>
           </tr>
         <% end %>
