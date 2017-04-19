@@ -1,6 +1,7 @@
 class CurrencyInput < SimpleForm::Inputs::Base
 
   def input(wrapper_options)
+    @money = price(object.input)
     merged_input_options = merge_wrapper_options(input_html_options, wrapper_options)
     "$ #{@builder.text_field(attribute_name, merged_input_options)}".html_safe
     template.content_tag(:div, class: 'input-group') do
@@ -10,7 +11,11 @@ class CurrencyInput < SimpleForm::Inputs::Base
   end
 
   def input_html_options
-    super.merge({inputmode: 'numeric', pattern: '[0-9]*'})
+    super.merge({inputmode: 'numeric', pattern: '[0-9]*', value: @money})
+  end
+
+  def price value
+    "%.2f" % value
   end
 
 end

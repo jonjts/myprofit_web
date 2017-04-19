@@ -35,7 +35,7 @@
             <%= number_to_currency(bill.output) %>
           </td>
           <% total = bill.input - bill.output %>
-          <% if bill.input > total %>
+          <% if total < 0 %>
             <td style="color: red;">
             <%else%>
               <td style="color: green;">
@@ -61,10 +61,10 @@
               <%= label_tag(:q, number_to_currency(total_output)) %>
             </td>
             <% total = total_input - total_output %>
-            <%if total < total_input%>
+            <%if total < 0%>
               <td style="color: red;">
               <%else%>
-                <td>
+                <td style="color: green;">
                 <%end%>
                 <%= label_tag(:q, number_to_currency(total)) %>
               </td>
