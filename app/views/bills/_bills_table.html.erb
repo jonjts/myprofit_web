@@ -35,10 +35,10 @@
             <%= number_to_currency(bill.output) %>
           </td>
           <% total = bill.input - bill.output %>
-          <%if total < bill.input%>
+          <% if bill.input > total %>
             <td style="color: red;">
             <%else%>
-              <td>
+              <td style="color: green;">
               <%end%>
               <%= number_to_currency(total) %>
             </td>

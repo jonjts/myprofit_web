@@ -3,14 +3,14 @@
     <div class="col-md-6">
       <ul class="list-unstyled">
         <li>
-          <%= f.input :title, as: :string, input_html: {class: 'form-control' }%>
+          <%= f.input :title, as: :string,input_html: {class: 'form-control' }%>
         </li>
       </ul>
     </div>
     <div class="col-md-6">
       <ul class="list-unstyled">
         <li>
-          <%= f.input :date_record, as: :datePicker, input_html: {class: 'form-control', :"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker'}  %>
+          <%= f.input :date_record, as: :datePicker  %>
         </li>
       </ul>
     </div>
@@ -47,6 +47,6 @@
 <% end %>
 <script type="text/javascript">
   moment.locale('pt-BR');
-    $("#bill_input").maskMoney();
-    $("#bill_output").maskMoney();
+                  $("#bill_input").maskMoney();
+                  $("#bill_output").maskMoney();
 </script>

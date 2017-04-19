@@ -8,4 +8,9 @@ class CurrencyInput < SimpleForm::Inputs::Base
       template.concat template.content_tag(:span, template.content_tag(:span, "", :class => "glyphicon glyphicon-usd") ,:class => "input-group-addon")
     end
   end
+
+  def input_html_options
+    super.merge({inputmode: 'numeric', pattern: '[0-9]*'})
+  end
+
 end

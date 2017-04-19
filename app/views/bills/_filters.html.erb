@@ -33,13 +33,13 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group">
-                <%= text_field_tag(:input_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+                <%= text_field_tag(:input_min, "",class: 'form-control', placeholder: t('filters.min')) %>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
               </div>
             </div>
             <div class="col-md-6">
               <div class="input-group">
-                <%= text_field_tag(:input_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+                <%= text_field_tag(:input_max, "",class: 'form-control', placeholder: t('filters.max')) %>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
               </div>
             </div>
@@ -52,13 +52,13 @@
           <div class="row">
             <div class="col-md-6">
               <div class="input-group">
-                <%= text_field_tag(:output_min, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.min')) %>
+                <%= text_field_tag(:output_min, "",class: 'form-control', placeholder: t('filters.min')) %>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
               </div>
             </div>
             <div class="col-md-6">
               <div class="input-group">
-                <%= text_field_tag(:output_max, "",class: 'form-control',:"data-provide" => 'datatimepicker', 'data-behaviour' => 'datetimepicker', placeholder: t('filters.max')) %>
+                <%= text_field_tag(:output_max, "",class: 'form-control', placeholder: t('filters.max')) %>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
               </div>
             </div>
@@ -75,31 +75,31 @@
 </div>
 <script type="text/javascript">
   $("#output_min").maskMoney();
-                                $("#output_max").maskMoney();
+                                    $("#output_max").maskMoney();
   
-                                $("#input_min").maskMoney();
-                                $("#input_max").maskMoney();
+                                    $("#input_min").maskMoney();
+                                    $("#input_max").maskMoney();
   
-                                $('#date_min').datetimepicker({
-                                locale: 'pt-br', format: 'L'
-                                });
-                                $('#date_max').datetimepicker({
-                                locale: 'pt-br', format: 'L'
-                                });
+                                    $('#date_min').datetimepicker({
+                                    locale: 'pt-br', format: 'L'
+                                    });
+                                    $('#date_max').datetimepicker({
+                                    locale: 'pt-br', format: 'L'
+                                    });
   
-                                $("#submit_link").click(function(event) {
-                                event.preventDefault();
-                                $("#search_form").submit();
-                                });
-                                $("#clear_link").click(function(event) {
-                                event.preventDefault();
-                                $("#title").val('');
-                                $("#date_min").val('');
-                                $("#date_max").val('');
-                                $("#input_max").val('');
-                                $("#input_min").val('');
-                                $("#output_max").val('');
-                                $("#output_min").val('');
-                                $("#search_form").submit();
-                                });
+                                    $("#submit_link").click(function(event) {
+                                    event.preventDefault();
+                                    $("#search_form").submit();
+                                    });
+                                    $("#clear_link").click(function(event) {
+                                    event.preventDefault();
+                                    $("#title").val('');
+                                    $("#date_min").val('');
+                                    $("#date_max").val('');
+                                    $("#input_max").val('');
+                                    $("#input_min").val('');
+                                    $("#output_max").val('');
+                                    $("#output_min").val('');
+                                    $("#search_form").submit();
+                                    });
 </script>
