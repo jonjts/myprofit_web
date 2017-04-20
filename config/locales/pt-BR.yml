@@ -34,6 +34,10 @@ pt-BR:
     min: Min
     search: Pesquisar
     clear: Limpar
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Próximo &#8594;"
+    page_gap: "&hellip;"
   activerecord:
     models:
       bill: Receita

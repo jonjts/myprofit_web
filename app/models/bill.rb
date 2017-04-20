@@ -1,4 +1,5 @@
 class Bill < ApplicationRecord
+  after_initialize :default_values
 
   scope :for_month, ->(user_id,month, year) {
     where('user_id = ? AND extract(month  from date_record) = ? AND extract(year  from date_record) = ?',
@@ -76,5 +77,10 @@ class Bill < ApplicationRecord
 
   def self.convert_to_date(value)
     date = DateTime.parse(value)
+  end
+
+  def default_values
+    self.output ||= 0.00
+    self.input ||= 0.00
   end
 end
