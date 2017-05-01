@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  scope :api do
+    scope :v1 do
+      scope :users do
+        get '/' => 'api/v1/users#index'
+        scope :login do
+          post '/' => 'api/v1/users#login'
+        end
+      end
+    end
+  end
+
   scope "(:locale)", locale: /en|pt-BR/ do
     devise_for :users,
     :controllers => {
