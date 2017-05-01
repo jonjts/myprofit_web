@@ -6,6 +6,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div id= 'diver_picker'>
+          <div id='datetimepicker12'></div>
         </div>
         <%= render 'form_search'%>
       </div>
@@ -18,23 +19,24 @@
    balance_color: @balance_color%>
   </div>
   <script type="text/javascript">
-    $(function () {
-                    $("#datetimepicker12").remove();
+    $(function() {
+         $("#datetimepicker12").remove();
     
-                    $("#diver_picker").append("<div id='datetimepicker12'></div>");
+         $("#diver_picker").append("<div id='datetimepicker12'></div>");
     
-                        $('#datetimepicker12').datetimepicker({
-                        inline: true,
-                        sideBySide: true,
-                        viewMode: 'months',
-                        format: 'MM/YYYY'
-                        });
-                        });
+         $('#datetimepicker12').datetimepicker({
+             inline: true,
+             sideBySide: true,
+             viewMode: 'months',
+             format: 'MM/YYYY'
+         });
     
-                        $("#datetimepicker12").on("dp.change", function(e) {
-                        $("#search_month").attr('value',e.date.format('MM')+"");
-                        $("#search_year").attr('value',e.date.format('YYYY')+"");
-                            $( "#dashboard_form" ).submit();
-                        });
+         $("#datetimepicker12").on("dp.change", function(e) {
+             $("#search_month").attr('value', e.date.format('MM') + "");
+             $("#search_year").attr('value', e.date.format('YYYY') + "");
+             $("#dashboard_form").submit();
+         });
+    
+     });
   </script>
 </div>

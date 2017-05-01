@@ -61,9 +61,9 @@ class Bill < ApplicationRecord
       @all = @all.where("date_record BETWEEN ? AND ?", convert_to_date(date_min),
                         convert_to_date(date_max))
     elsif !date_max.blank?
-      @all = @all.where('date_record <= ?', date_max)
+      @all = @all.where('date_record <= ?', convert_to_date(date_max))
     elsif !date_min.blank?
-      @all = @all.where("date_record >= ?", date_min)
+      @all = @all.where("date_record >= ?", convert_to_date(date_min))
     end
     @all
   end
